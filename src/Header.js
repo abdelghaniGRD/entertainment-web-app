@@ -65,7 +65,6 @@ function Header() {
                 key={index}
                 onClick={() => {
                   setActive(index);
-                  console.log(index);
                 }}
                 className={index === active ? "active" : ""}
               >
