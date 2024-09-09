@@ -238,6 +238,17 @@ main .recomended,
     width: 280px;
     height: 226px;
   }
+  .recommended-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 83%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
+    z-index: 0;
+  }
   .card::before {
     content: "";
     position: absolute;
@@ -249,10 +260,13 @@ main .recomended,
     transition: background-color 0.3s ease; /* Smooth transition */
     z-index: 0; /* Ensure it sits behind the text */
   }
-  .card:hover::before {
+
+  .card:hover::before,
+  .recommended-card:hover::before {
     background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
   }
-  .card:hover .play {
+  .card:hover .play,
+  .recommended-card:hover .play {
     display: flex;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -264,11 +278,16 @@ main .recomended,
     border-radius: 28px;
     align-items: center;
   }
-  .card:hover .play img {
+  .card-save:hover {
+    background-color: #6d5a5a7d;
+  }
+  .card:hover .play img,
+  .recommended-card:hover .play img {
     padding-left: 9px;
     padding-right: 19px;
   }
-  .card:hover .play span {
+  .card:hover .play span,
+  .recommended-card:hover .play span {
     margin-top: -4px;
   }
   nav ul li:hover {

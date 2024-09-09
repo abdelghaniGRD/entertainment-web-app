@@ -87,7 +87,7 @@ function Trending({ data }) {
                     {windowWidth > 768 ? (
                       <span className="play ">
                         <img src="./assets/icon-play.svg" alt="play"></img>
-                        <span>play</span>
+                        <span>play </span>
                       </span>
                     ) : (
                       ""
@@ -145,7 +145,14 @@ function Trending({ data }) {
                         src={card.thumbnail.regular.small}
                       />
                     </div>
-
+                    {windowWidth > 768 ? (
+                      <span className="play ">
+                        <img src="./assets/icon-play.svg" alt="play"></img>
+                        <span>play </span>
+                      </span>
+                    ) : (
+                      ""
+                    )}
                     <div className="film-info">
                       <p>{card.year}</p>
                       <span></span>

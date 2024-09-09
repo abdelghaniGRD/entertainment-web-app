@@ -4,6 +4,7 @@ import Search from "./Search";
 function TvSeries() {
   const [searchQuery, setSearchQuery] = useState("");
   const [filtredData, setFiltredData] = useState();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const [data, setData] = useState(() => {
     const dt = localStorage.getItem("data");
@@ -80,7 +81,14 @@ function TvSeries() {
                         alt={card.title}
                         src={card.thumbnail.regular.small}
                       ></img>
-
+                      {windowWidth > 768 ? (
+                        <span className="play ">
+                          <img src="./assets/icon-play.svg" alt="play"></img>
+                          <span>play </span>
+                        </span>
+                      ) : (
+                        ""
+                      )}
                       <div className="film-info">
                         <p>{card.year}</p>
                         <span></span>
