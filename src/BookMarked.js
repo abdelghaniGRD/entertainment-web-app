@@ -53,116 +53,118 @@ function BookMarked() {
 
   return (
     <>
-      <Search
-        title={"Search for BookMarked Shows"}
-        setSearchQuery={setSearchQuery}
-      />
-      {searchQuery === "" ? (
-        <>
-          <p className="bookmarked">BookMarked Movies</p>
-          <div className="main-recommended">
-            <section className="main-recommended-cards">
-              {movies.map((card) => {
-                return (
-                  <div className="recommended-card" key={card.id}>
-                    <div
-                      className="card-save"
-                      onClick={() =>
-                        updateIsBookmarked(card.id, card.isBookmarked)
-                      }
-                    >
-                      <img
-                        src={
-                          card.isBookmarked
-                            ? "./assets/icon-bookmark-full.svg"
-                            : "./assets/icon-bookmark-empty.svg"
+      <main>
+        <Search
+          title={"Search for BookMarked Shows"}
+          setSearchQuery={setSearchQuery}
+        />
+        {searchQuery === "" ? (
+          <>
+            <p className="bookmarked">BookMarked Movies</p>
+            <div className="main-recommended">
+              <section className="main-recommended-cards">
+                {movies.map((card) => {
+                  return (
+                    <div className="recommended-card" key={card.id}>
+                      <div
+                        className="card-save"
+                        onClick={() =>
+                          updateIsBookmarked(card.id, card.isBookmarked)
                         }
-                        alt="save"
-                      ></img>
-                    </div>
-                    <img
-                      className="main-img"
-                      alt={card.title}
-                      src={card.thumbnail.regular.small}
-                    ></img>
-
-                    <div className="film-info">
-                      <p>{card.year}</p>
-                      <span></span>
+                      >
+                        <img
+                          src={
+                            card.isBookmarked
+                              ? "./assets/icon-bookmark-full.svg"
+                              : "./assets/icon-bookmark-empty.svg"
+                          }
+                          alt="save"
+                        ></img>
+                      </div>
                       <img
-                        src={
-                          card.category === "Movie"
-                            ? "./assets/icon-category-movie.svg"
-                            : "./assets/icon-category-tv.svg"
-                        }
-                        alt=""
-                      ></img>
-                      <p>{card.category}</p>
-                      <span></span>
-                      <p>{card.rating}</p>
-                    </div>
-                    <h2 className="title">{card.title}</h2>
-                  </div>
-                );
-              })}
-            </section>
-          </div>
-        </>
-      ) : (
-        <>
-          <p className="tv-series">
-            Found {filtredData.length} results for {searchQuery}
-          </p>
-          <div className="main-recommended">
-            <section className="main-recommended-cards">
-              {filtredData.map((card) => {
-                return (
-                  <div className="recommended-card" key={card.id}>
-                    <div
-                      className="card-save"
-                      onClick={() =>
-                        updateIsBookmarked(card.id, card.isBookmarked)
-                      }
-                    >
-                      <img
-                        src={
-                          card.isBookmarked
-                            ? "./assets/icon-bookmark-full.svg"
-                            : "./assets/icon-bookmark-empty.svg"
-                        }
-                        alt="save"
-                      ></img>
-                    </div>
-                    <div className="main-img">
-                      <img
+                        className="main-img"
                         alt={card.title}
                         src={card.thumbnail.regular.small}
-                      />
-                    </div>
-
-                    <div className="film-info">
-                      <p>{card.year}</p>
-                      <span></span>
-                      <img
-                        src={
-                          card.category === "Movie"
-                            ? "./assets/icon-category-movie.svg"
-                            : "./assets/icon-category-tv.svg"
-                        }
-                        alt=""
                       ></img>
-                      <p>{card.category}</p>
-                      <span></span>
-                      <p>{card.rating}</p>
+
+                      <div className="film-info">
+                        <p>{card.year}</p>
+                        <span></span>
+                        <img
+                          src={
+                            card.category === "Movie"
+                              ? "./assets/icon-category-movie.svg"
+                              : "./assets/icon-category-tv.svg"
+                          }
+                          alt=""
+                        ></img>
+                        <p>{card.category}</p>
+                        <span></span>
+                        <p>{card.rating}</p>
+                      </div>
+                      <h2 className="title">{card.title}</h2>
                     </div>
-                    <h2 className="title">{card.title}</h2>
-                  </div>
-                );
-              })}
-            </section>
-          </div>
-        </>
-      )}
+                  );
+                })}
+              </section>
+            </div>
+          </>
+        ) : (
+          <>
+            <p className="tv-series">
+              Found {filtredData.length} results for {searchQuery}
+            </p>
+            <div className="main-recommended">
+              <section className="main-recommended-cards">
+                {filtredData.map((card) => {
+                  return (
+                    <div className="recommended-card" key={card.id}>
+                      <div
+                        className="card-save"
+                        onClick={() =>
+                          updateIsBookmarked(card.id, card.isBookmarked)
+                        }
+                      >
+                        <img
+                          src={
+                            card.isBookmarked
+                              ? "./assets/icon-bookmark-full.svg"
+                              : "./assets/icon-bookmark-empty.svg"
+                          }
+                          alt="save"
+                        ></img>
+                      </div>
+                      <div className="main-img">
+                        <img
+                          alt={card.title}
+                          src={card.thumbnail.regular.small}
+                        />
+                      </div>
+
+                      <div className="film-info">
+                        <p>{card.year}</p>
+                        <span></span>
+                        <img
+                          src={
+                            card.category === "Movie"
+                              ? "./assets/icon-category-movie.svg"
+                              : "./assets/icon-category-tv.svg"
+                          }
+                          alt=""
+                        ></img>
+                        <p>{card.category}</p>
+                        <span></span>
+                        <p>{card.rating}</p>
+                      </div>
+                      <h2 className="title">{card.title}</h2>
+                    </div>
+                  );
+                })}
+              </section>
+            </div>
+          </>
+        )}
+      </main>
     </>
   );
 }

@@ -84,6 +84,14 @@ function Trending({ data }) {
                         alt="save"
                       ></img>
                     </div>
+                    {windowWidth > 768 ? (
+                      <span className="play ">
+                        <img src="./assets/icon-play.svg" alt="play"></img>
+                        <span>play</span>
+                      </span>
+                    ) : (
+                      ""
+                    )}
 
                     <div className="film">
                       <div className="film-info">
