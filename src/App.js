@@ -14,7 +14,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:4000/cards")
+    fetch("Data/data.json")
       .then((response) => response.json())
       .then((data) => {
         setData(data);
