@@ -3,10 +3,10 @@ import BookMarked from "./BookMarked.js";
 import "./Main.js";
 import Main from "./Main.js";
 import Movies from "./Movies.js";
-import Search from "./Search.js";
+
 import TvSeries from "./TvSeries.js";
 import Header from "./Header.js";
-import { BrowserRouter as Router, Route, Routes, json } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function App() {
